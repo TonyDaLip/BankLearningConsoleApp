@@ -17,8 +17,6 @@ namespace Bank2Solution
             var bank = serviceProvider.GetService<BankService>();
             var commandInput = serviceProvider.GetService<ICommandInput>();
             var commandHandler = serviceProvider.GetService<CommandHandler>();
-            var clientsPresenter = serviceProvider.GetService<ClientsPresenter>();
-            var notificationsPresenter = serviceProvider.GetService<NotificationsPresenter>();
             var ui = serviceProvider.GetService<ConsoleLayout>();
             var timer = serviceProvider.GetService<TimeManager>();
 
@@ -52,9 +50,13 @@ namespace Bank2Solution
                 lock (Console.Out)
                 {
                     if (command == null)
+                    {
                         Console.WriteLine("Unknown command");
+                    }
                     else
+                    {
                         command.Execute();
+                    }
                 }
             }
 

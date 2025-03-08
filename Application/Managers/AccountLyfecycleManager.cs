@@ -22,7 +22,7 @@ namespace Bank2Solution.Application.Managers
             _eventAggregator = eventAggregator;
         }
 
-        public int LastAccountId { get; private set; } = 0;
+        public int LastAccountId { get; private set; }
 
         public void OpenAccount(Client client, BaseAccount account)
         {
@@ -82,7 +82,9 @@ namespace Bank2Solution.Application.Managers
             foreach (var account in _storage.GetAllAccounts())
             {
                 if (account is CapitalizableAccount interestAccount && interestAccount.TermInMonths <= 0)
+                {
                     accountsToClose.Add(account);
+                }
             }
 
             return accountsToClose;

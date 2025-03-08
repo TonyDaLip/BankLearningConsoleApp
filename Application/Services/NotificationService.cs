@@ -15,8 +15,10 @@ namespace Bank2Solution.Application.Services
 
         private void AddNotification(string notification)
         {
-            if (_notifications.Count >= 10) 
+            if (_notifications.Count >= 10)
+            {
                 _notifications.Dequeue();
+            }
 
             _notifications.Enqueue(notification);
         }

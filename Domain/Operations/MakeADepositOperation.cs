@@ -12,14 +12,16 @@ namespace Bank2Solution.Domain.Operations
     {
         private readonly Client _client;        
         private readonly StrategiesEnum _strategy;
-        private double _amount;
-        private int _termInMonths;
+        private readonly double _amount;
+        private readonly int _termInMonths;
 
         public MakeADepositOperation(Client client, double amount, StrategiesEnum strategy, int termInMonths)
         {
             _client = client ?? throw new ArgumentNullException(nameof(client));
             if (amount < 0)
+            {
                 throw new ArgumentException("Amount of money should be larger than 0", nameof(amount));
+            }
             _amount = amount;
             _strategy = strategy;
             _termInMonths = termInMonths;

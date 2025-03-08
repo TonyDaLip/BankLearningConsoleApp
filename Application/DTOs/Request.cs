@@ -4,14 +4,14 @@ namespace Bank2Solution.Application.DTOs
 {
     internal class Request
     {
-        public Request(object command, object[] values)
+        public Request(string command, string[] values)
         {
             Command = InputConverter<string>.Convert(command);
             Values = values;
         }
 
         public string Command { get; set; }
-        public object[] Values { get; set; }
+        public string[] Values { get; set; }
 
         public bool IsIncorrectValuesCount(int correct)
         {

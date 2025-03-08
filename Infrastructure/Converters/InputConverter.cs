@@ -2,7 +2,7 @@
 {
     internal static class InputConverter<T>
     {
-        public static T Convert(object value)
+        public static T Convert(string value)
         {
             try
             {

@@ -31,7 +31,9 @@ namespace Bank2Solution.Application.Factories.Commands
         public ICommand Create(Request request)
         {
             if (request.IsIncorrectValuesCount(4))
+            {
                 throw new ArgumentException($"Incorrect number of values for {CommandName}");
+            }
 
             var name = InputConverter<string>.Convert(request.Values[0]);
             var lastName = InputConverter<string>.Convert(request.Values[1]);

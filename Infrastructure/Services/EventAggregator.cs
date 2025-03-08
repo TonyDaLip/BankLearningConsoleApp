@@ -21,7 +21,9 @@ namespace Bank2Solution.Infrastructure.Services
         public void Subscribe<TEvent>(Action<TEvent> handler) where TEvent : IEvent
         {
             if (!_subscribers.ContainsKey(typeof(TEvent)))
+            {
                 _subscribers.Add(typeof(TEvent), new List<Delegate>());
+            }
 
             _subscribers[typeof(TEvent)].Add(handler);
         }

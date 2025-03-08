@@ -53,7 +53,9 @@ namespace Bank2Solution.Application.Managers
         public void AddClient(Client client)
         {
             if (_clients.Contains(client))
+            {
                 throw new InvalidOperationException("Client already exists in the collection");
+            }
 
             _clients.Add(client);
             LastClientId++;

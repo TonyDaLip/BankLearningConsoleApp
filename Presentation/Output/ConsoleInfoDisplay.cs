@@ -16,7 +16,9 @@ namespace Bank2Solution.Presentation.Output
         public void DisplayList(string section, IEnumerable<string> listToDisplay)
         {
             if (!_layouts.TryGetValue(section, out var position))
+            {
                 position = (0, Console.CursorTop);
+            }
 
             Console.SetCursorPosition(position.x, position.y);
 

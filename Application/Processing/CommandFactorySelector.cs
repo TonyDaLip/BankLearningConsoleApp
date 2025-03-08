@@ -15,8 +15,9 @@ namespace Bank2Solution.Application.Processing
         public ICommand CreateCommand(Request request)
         {
             if (!_factories.TryGetValue(request.Command, out var factory))
+            {
                 return null;
-            //throw new ArgumentException($"Unknown command: {request.Command}");
+            }
 
             return factory.Create(request);
         }

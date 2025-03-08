@@ -8,10 +8,10 @@ namespace Bank2Solution.Application.Commands
     {
         private readonly ClientManager _manager;
         private readonly IClientFactory _factory;
-        private ClientType _clientType;
-        private string _clientName;
-        private string _clientLastName;
-        private bool _creditHistory;
+        private readonly ClientType _clientType;
+        private readonly string _clientName;
+        private readonly string _clientLastName;
+        private readonly bool _creditHistory;
 
         public AddClientCommand(ClientManager manager, IClientFactory factory, ClientType type, string firstName, string lastName, bool goodCreditHistory = true) 
         {

@@ -12,8 +12,8 @@ namespace Bank2Solution.Domain.Operations
     {
         private readonly Client _client;
         private readonly StrategiesEnum _strategy;
-        private double _amount;
-        private int _termInMonths;
+        private readonly double _amount;
+        private readonly int _termInMonths;
 
         public TakeALoanOperation(Client client, double amount, StrategiesEnum strategy, int termInMonths)
         {

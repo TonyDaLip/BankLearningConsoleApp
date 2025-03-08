@@ -10,7 +10,9 @@ namespace Bank2Solution.Domain.Entities.Accounts
         public override void CalculateInterest(int months, double multiplier, bool GoodCreditHistory)
         {
             if (GoodCreditHistory)
+            {
                 multiplier *= 0.9;
+            }
 
             Balance += _strategy.CalculateInterest(Balance, months, _totalTermInMonths, multiplier, IsTermExpired(months));
         }

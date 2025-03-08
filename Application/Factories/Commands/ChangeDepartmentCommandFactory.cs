@@ -29,7 +29,9 @@ namespace Bank2Solution.Application.Factories.Commands
         public ICommand Create(Request request)
         {
             if (request.IsIncorrectValuesCount(1))
+            {
                 throw new ArgumentException($"Incorrect number of values for {CommandName}");
+            }
 
             var newDepartment = EnumConverter.TryConvertEnum<ClientType>(request.Values[0]);
 

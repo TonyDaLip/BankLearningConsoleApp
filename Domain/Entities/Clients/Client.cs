@@ -2,7 +2,7 @@
 {
     internal abstract class Client
     {
-        public Client(int id, string firstName, string lastName, bool goodCreditHistory = true)
+        protected Client(int id, string firstName, string lastName, bool goodCreditHistory = true)
         {
             Id = id;
             FirstName = firstName;
@@ -20,7 +20,9 @@
         public override bool Equals(object? obj)
         {
             if (obj is Client client)
+            {
                 return Id == client.Id;
+            }
 
             return false;
         }

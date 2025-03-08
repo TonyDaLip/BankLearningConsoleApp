@@ -24,7 +24,9 @@ namespace Bank2Solution.Infrastructure.Formatters
                 builder.AppendLine();
                 builder.Append($"  ID: {account.AccountID}; {account.GetType().Name}; Balance: {account.Balance: #.##}");
                 if (account is CapitalizableAccount capitalizableAccount)
+                {
                     builder.Append($"; {capitalizableAccount.TermInMonths} months");
+                }                    
             }
 
             return builder.ToString();

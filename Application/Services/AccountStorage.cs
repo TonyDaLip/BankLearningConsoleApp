@@ -10,21 +10,29 @@ namespace Bank2Solution.Application.Services
         internal void AddAccount(Client client, BaseAccount account)
         {
             if (!_clientAccounts.ContainsKey(client))
+            {
                 _clientAccounts.Add(client, new List<BaseAccount>());
+            }
 
             if (_clientAccounts[client].Contains(account))
+            {
                 throw new InvalidOperationException("Account already exists in the collection");
+            }
 
             _clientAccounts[client].Add(account);
         }
 
         internal void RemoveAccount(Client client, BaseAccount account)
         {
-            if(!_clientAccounts.ContainsKey(client))
+            if (!_clientAccounts.ContainsKey(client))
+            {
                 throw new InvalidOperationException("Client doesn't exist in the system");
+            }
 
             if (!_clientAccounts[client].Contains(account))
+            {
                 throw new InvalidOperationException("Client doesn't have this account");
+            }
 
             _clientAccounts[client].Remove(account);
         }

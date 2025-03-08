@@ -8,14 +8,17 @@ namespace Bank2Solution.Domain.Operations
 {
     internal class WithdrawBalanceOperation : IOperation
     {
-        private Client _client;
-        private double _amount;
+        private readonly Client _client;
+        private readonly double _amount;
 
         public WithdrawBalanceOperation(Client client, double amount)
         {
             _client = client ?? throw new ArgumentNullException(nameof(client));
             if (amount < 0)
+            {
                 throw new ArgumentException("Amount of money should be larger than 0", nameof(amount));
+            }
+
             _amount = amount;
         }
 

@@ -7,7 +7,7 @@ namespace Bank2Solution.Domain.Entities.Accounts
         protected readonly ICapitalizationStrategy _strategy;
         protected int _totalTermInMonths;
 
-        public CapitalizableAccount(double amount, int accountID, int termInMonths, ICapitalizationStrategy strategy) : base(amount, accountID)
+        protected CapitalizableAccount(double amount, int accountID, int termInMonths, ICapitalizationStrategy strategy) : base(amount, accountID)
         {
             _strategy = strategy;
             _totalTermInMonths = termInMonths;

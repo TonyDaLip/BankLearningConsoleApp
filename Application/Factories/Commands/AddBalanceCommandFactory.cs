@@ -30,7 +30,9 @@ namespace Bank2Solution.Application.Factories.Commands
         public ICommand Create(Request request)
         {
             if (request.IsIncorrectValuesCount(2))
+            {
                 throw new ArgumentException($"Incorrect number of values for {CommandName}");
+            }
 
             var clientId = InputConverter<int>.Convert(request.Values[0]);
             var client = _clientManager.GetClientFromId(clientId);

@@ -6,8 +6,8 @@ namespace Bank2Solution.Application.Processing
     {
         public Request ParseString(string input)
         {
-            object[] terms = input.Split(' ');
-            object[] values = terms.Skip(1).ToArray();
+            string[] terms = input.Split(' ');
+            string[] values = terms.Skip(1).ToArray();
 
             return new Request(terms[0], values);
         }

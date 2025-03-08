@@ -7,7 +7,10 @@
             try
             {
                 if (Enum.TryParse(typeof(TEnum), value.ToString(), true, out var result) && result is TEnum enumValue)
+                {
                     return enumValue;
+                }
+
                 throw new ArgumentException($"Value {value} is not a valid {typeof(TEnum).Name}");
             }
             catch

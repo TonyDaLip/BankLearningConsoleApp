@@ -8,9 +8,9 @@ namespace Bank2Solution.Domain.Operations
 {
     internal class MakeATransactionOperation : IOperation
     {
-        private Client _clientWhoSends;
-        private Client _clientWhoReceives;
-        private double _amount;
+        private readonly Client _clientWhoSends;
+        private readonly Client _clientWhoReceives;
+        private readonly double _amount;
 
         public MakeATransactionOperation(Client clientWhoSends, Client clientWhoReceives, double amount)
         {
